@@ -68,6 +68,18 @@ class User{
         return $this->db->update($sql);
 	}
 
+	public function getAllUser(){
+		$query="SELECT * FROM tbl_user ORDER BY id DESC;";
+		$result=$this->db->select($query);
+		return $result;
+	}
+
+	public function userByEmail($email){
+		$query="SELECT * FROM tbl_user WHERE email='$email' LIMIT 1;";
+		$result=$this->db->select($query);
+		return $result;
+	}
+
 
 }
 

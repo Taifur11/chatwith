@@ -18,6 +18,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['signin'])){
         if($user->updatestatus($loginuser['email'])){
             Session::set("login",true);
             Session::set("username",$loginuser['username']);
+            Session::set("email",$loginuser['email']);
             $username=$loginuser['username'];
             echo "<script>alert('$username Successfully Signed In')</script>";
             echo "<script>window.open('home.php','_self')</script>";
